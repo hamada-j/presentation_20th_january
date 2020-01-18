@@ -28,6 +28,7 @@ color azul: #21242e;
 body {
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 1em;
+  background-color: #21242e;
 }
 /* Flotaciones */
 .row:after {
@@ -116,16 +117,11 @@ header nav .menu li a {
   display: block;
 }
 
-header nav .menu li a.activo,
-header nav .menu li a:hover {
-  color: #fa573a;
-}
-
 /* Boton */
 
 .boton {
   display: inline-block;
-  background-color: white;
+  background-color: #21242e;
   padding: 1.15em;
   color: #fa573a;
   text-decoration: none;
@@ -143,15 +139,105 @@ header nav .menu li a:hover {
 }
 
 /* Main Blog */
+
+.all {
+  background-color: #21242e;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+}
+.part {
+  background-color: #21242e;
+  padding: 1%;
+  margin: 1%;
+}
+
+.sidebar {
+  padding: 0 auto;
+  background-color: #21242e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  flex: 0 0 18%;
+}
+
+.side-nav {
+  font-size: 1em;
+  list-style: none;
+  margin-top: 2em;
+}
+
+.item {
+  position: relative;
+}
+.item:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 3%;
+  border-radius: 5%;
+  background-color: #fa573a;
+  transform: scaleY(0);
+  transition: transform 0.3s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+    background-color 0.1s;
+}
+.item:hover::before,
+.tem--active::before {
+  transform: scaleY(1);
+  width: 100%;
+}
+.item:active::before {
+  background-color: white;
+}
+
+.link:link,
+.link:visited {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+  display: block;
+  padding: 1em 1em;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.price {
+  color: #fa573a;
+  padding: 0 3em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.info {
+  background-color: #21242e;
+  color: white;
+}
+.signal {
+  border-color: #fa573a;
+  width: 20%;
+}
+.h3-info {
+  font-weight: 700;
+}
+
 main section.container {
   padding-top: 2.125em;
   padding-bottom: 2.125em;
 }
 
 main section h2 {
-  color: black;
+  color: white;
   font-family: "Handlee", cursive;
-  font-size: 2em;
+  font-size: 3em;
   text-align: center;
 }
 
@@ -206,6 +292,9 @@ main section article h3 {
   font-weight: 700;
   margin: 1em 0;
 }
+main section article p {
+  font-size: 1em;
+}
 
 main section .enlace {
   text-decoration: none;
@@ -220,7 +309,7 @@ main section .enlace:hover i {
 }
 
 main section .columna {
-  width: 100%;
+  width: 50%;
   padding: 1.25em 0;
 }
 
@@ -236,23 +325,12 @@ main section .imagen .marco {
   transition: 1s;
 }
 
-main section .imagen .marco img {
-  transform: rotateZ(-10deg);
-  transition: 1s;
-}
-
-main section .imagen:hover .marco,
-main section .imagen:hover img {
-  transform: rotateZ(0deg);
-}
-
 main section h3 {
   font-weight: 700;
+  color: white;
 }
-
-main section h4 {
-  margin: 0.5em 0;
-  color: #fa573a;
+main section p {
+  color: #aaa;
 }
 
 footer {
@@ -291,6 +369,11 @@ footer a {
   main section .underline {
     margin-bottom: 2em;
   }
+
+  .link:link,
+  .link:visited {
+    padding: 1em 5em;
+  }
 }
 
 @media (min-width: 62.75em) {
@@ -318,6 +401,11 @@ footer a {
   main section .columna {
     width: 50%;
     padding: 1.25em 1em;
+    flex-direction: row;
+  }
+  .all {
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
@@ -332,5 +420,9 @@ footer a {
   main section .columna {
     width: 100%;
     padding: 1.25em 1em;
+  }
+  .all {
+    flex-direction: row;
+    justify-content: center;
   }
 }

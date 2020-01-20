@@ -280,6 +280,19 @@ footer a {
   color: white;
   text-decoration: none;
 }
+
+.botonUp {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #fa573a;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
 /* Media Q */
 
 @media (min-width: 48.063em) {

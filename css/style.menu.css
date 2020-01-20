@@ -333,6 +333,19 @@ main section p {
   color: #aaa;
 }
 
+.botonUp {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #fa573a;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+
 footer {
   background-color: #21242e;
   padding: 1.825em 0;
